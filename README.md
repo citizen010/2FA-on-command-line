@@ -7,6 +7,100 @@
 <code>sudo apt install oathtool gpg</code></p>
 <p>Then, store the following source code to a shell script <code>totp</code>:<br /><br />
 <code>sudo nano /usr/local/bin/totp</code>
+<pre><code>
+#!/bin/bash
+# 
+# Time-based One-time Password algorithm (TOTP) helper script
+# Save shared secrets on disk protected with GnuPG encryption
+# Easily generate OTPs for two-factor authorization (2FA)
+#
+# Setup:
+# Install requirements with `sudo apt install oathtool gpg`
+# Setup gpg as per https://keyring.debian.org/creating-key.html
+#
+# Adapt the 3 variables below:
+# - KEYFILE: file that holds the name/key pairs
+# - UID: GnuPG user ID to use for encryption
+# - KEYID: GnuPG key ID to use for encryption
+#
+# Good to know:
+# - get gpg keys with: `gpg --list-keys --keyid-format short user@example.com'
+#
+# - the $KEYFILE itself is in clear and has the format:
+#     aws=hQIMAxevVAas6A+AAQ//cJL/v3O6CCurdzVkCk5yEGa6sZgWWw6AkH/QenVmTSj...
+#     twitter=hQIMAxevVAas6A+AAQ/9H8h0yde7zErfF/8qwohD5Zw7q85FlI+IIFC1Kk5Ifpw...
+#     github=hQIMAxevVAas6A+AARAAm8T//mqNyBEz4Y/HGGlNgFUzk8vOaylMdE/TbDzVI...
+#
+# - the shared secrets are stored encrypted with gpg then base64-ed
+# - keys are never deleted, only appended
+# - the last available key for the chosen service is used
+# - to restore the previous key, manually delete the last key from $KEYFILE
+#
+# Authors:
+# - https://www.sendthemtomir.com/blog/cli-2-factor-authentication and
+# - https://karl-voit.at/2019/03/03/oathtool-otp/, Karl Voit, tools@Karl-Voit.at
+# - Paolo Greppi, paolo.greppi@libpf.com
+# LICENSE: GPLv3
+
+set -e
+
+KEYFILE="$HOME/.totpkeys"
+UID="user@example.com"
+KEYID="9E2A4CEF"
+
+if [ -z "$1" ]; then
+  echo
+  echo "Usage:"
+  echo "   totp list"
+  echo "   totp get google"
+  echo "   totp set google QUBAYAYXV5KANLHI"
+  exit
+fi
+
+if [ "$1" = 'list' ]; then
+   KEYS=$(sed 's/^\([^=]*\)=.*$/- \1/g' "$KEYFILE")
+   echo "Available keys:"
+   echo "$KEYS"
+   exit
+fi
+
+if [ "$1" = 'get' ]; then
+  if [ -z "$2" ]; then
+    echo "$0: Missing service name"
+    $0
+    exit
+  fi
+  TOTPKEY=$(sed -n "s/${2}=//p" "$KEYFILE" | tail -n 1)
+  if [ -z "$TOTPKEY" ]; then
+    echo "$0: Bad Service Name '$2'"
+    $0
+    exit
+  fi
+  TOTPKEY=$(echo "$TOTPKEY" | base64 -d | gpg --decrypt -r "$UID" -u "$KEYID" 2> /dev/null)
+  oathtool --totp -b "$TOTPKEY"
+  exit
+fi
+
+if [ "$1" = 'set' ]; then
+  if [ -z "$2" ]; then
+    echo "$0: Missing service name"
+    $0
+    exit
+  fi
+  if [ -z "$3" ]; then
+    echo "$0: Missing key"
+    $0
+    exit
+  fi
+  oathtool --totp -b "$3" > /dev/null # verify secret
+  TOTPKEY=$(echo "$3" | gpg --encrypt -r "$UID" -u "$KEYID" | base64 -w0)
+  echo "$2=$TOTPKEY" >> "$KEYFILE"
+  exit
+fi
+
+echo "Command $1 unknown"
+$0
+</code></pre>
 </p>
 <p>Make it executable with:<br /><br />
 <code>sudo chmod +x /usr/local/bin/topt</code></p>
