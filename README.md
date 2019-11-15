@@ -1,8 +1,8 @@
 # Time-based One-Time-Password for 2FA on CLI
 ## About ##
-There is no shortage of <a href="https://en.wikipedia.org/wiki/One-time_password">OTP</a> 2FA apps availiable for your phone, such as <a href="https://authy.com">Authy</a> , <a href="https://freeotp.github.io/">FreeOTP</a> or even the not so recommended <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&hl=en_us">Google Authenticator</a>.
-These apps take an initial secret code and create a <a href="https://en.wikipedia.org/wiki/Time-based_One-time_Password_algorithm">TOTP</a> anytime you  need a 2FA code for login.
-Using <code>oathtool</code> in the command line has the advantages that we'll be able to use TOTP authentication on Linux machines without mobile phone and it forces us to backup all our TOTP secrets and not only some recovery keys.
+There is no shortage of [OTP](https://en.wikipedia.org/wiki/One-time_password) 2FA apps availiable for your phone, such as [Authy](https://authy.com), [FreeOTP](https://freeotp.github.io/) or even the not so recommended [Google Authenticator](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&hl=en_us).
+These apps take an initial secret code and create a [TOTP](https://en.wikipedia.org/wiki/Time-based_One-time_Password_algorithm) anytime you  need a 2FA code for login.
+Using `oathtool` in the command line has the advantages that we'll be able to use TOTP authentication on Linux machines without mobile phone and it forces us to backup all our TOTP secrets and not only some recovery keys.
 ## Usage ##
 Make sure you're logged in as a regular user (not as root) and install as follow:
 
@@ -13,9 +13,9 @@ Then, store the following source code to a shell script:
 `sudo nano /usr/local/bin/totp`
 
 >    Adapt the 3 variables:<br />
->    <b>KEYFILE:</b> file that holds the name/key pairs<br/>
->    <b>UID:</b> GnuPG user ID to use for encryption<br />
->    <b>KEYID</b>: GnuPG key ID to use for encryption<br />
+>    *KEYFILE:* file that holds the name/key pairs<br/>
+>    *UID:* GnuPG user ID to use for encryption<br />
+>    *KEYID:* GnuPG key ID to use for encryption<br />
 
 <pre><code>
 #!/bin/bash
