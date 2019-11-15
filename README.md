@@ -12,7 +12,7 @@ Then, store the following source code to a shell script:
 
 `sudo nano /usr/local/bin/totp`
 
-Adapt the 3 variables:
+Make sure to adapt the 3 variables:
 >    **KEYFILE:** file that holds the name/key pairs<br/>
 >    **UID:** GnuPG user ID to use for encryption<br />
 >    **KEYID:** GnuPG key ID to use for encryption<br />
