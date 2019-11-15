@@ -1,2 +1,2 @@
 # 2FA-on-command-line
-Getting Time-based One-Time-Password for 2FA on the command line.
+There is no shortage of OTP 2FA apps availiable for your phone, such as Authy , FreeOTP or even the not so recommended Google Authenticator. 
