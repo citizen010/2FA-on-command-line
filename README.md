@@ -7,7 +7,7 @@
 <code>sudo apt install oathtool gpg</code></p>
 <p>Then, store the following source code to a shell script <code>totp</code>:<br /><br />
 <code>sudo nano /usr/local/bin/totp</code></p>
->Adapt the 3 variables:<br />
+> Adapt the 3 variables:<br />
 >    <b>KEYFILE:</b> file that holds the name/key pairs<br/>
 >    <b>UID:</b> GnuPG user ID to use for encryption<br />
 >    <b>KEYID</b>: GnuPG key ID to use for encryption<br />
