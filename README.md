@@ -14,9 +14,11 @@ Then, store the following source code to a shell script:
 
 Make sure to adapt the 3 variables:
 
-- [x] **KEYFILE:** file that holds the name/key pairs<br/>
-- [x] **UID:** GnuPG user ID to use for encryption<br />
-- [x] **KEYID:** GnuPG key ID to use for encryption<br />
+- [x] **KEYFILE:** file that holds the name/key pairs (eg: $HOME/.totpkeys)
+- [x] **UID:** GnuPG user ID to use for encryption (eg: user@example.com)
+- [x] **KEYID:** GnuPG key ID to use for encryption
+You can get **KEYID** with the command:
+`gpg --list-keys --keyid-format short user@example.com`
 
 <pre><code>
 #!/bin/bash
