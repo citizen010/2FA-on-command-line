@@ -16,9 +16,7 @@ Make sure to adapt the 3 variables:
 
 - [x] **KEYFILE:** file that holds the name/key pairs (eg: $HOME/.totpkeys)
 - [x] **UID:** GnuPG user ID to use for encryption (eg: user@example.com)
-- [x] **KEYID:** GnuPG key ID to use for encryption
-You can get **KEYID** with the command:
-`gpg --list-keys --keyid-format short user@example.com`
+- [x] **KEYID:** GnuPG key ID to use for encryption (`gpg --list-keys --keyid-format short user@example.com`)
 
 <pre><code>
 #!/bin/bash
