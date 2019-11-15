@@ -100,6 +100,7 @@ fi
 
 echo "Command $1 unknown"
 $0
+
 </code></pre>
 </p>
 <p>Make it executable with:<br /><br />
