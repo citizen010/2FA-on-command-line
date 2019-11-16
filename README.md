@@ -18,7 +18,7 @@ Make sure to adapt the 3 variables:
 - [x] **USERID:** GnuPG user ID to use for encryption (eg: user@example.com)
 - [x] **KEYID:** GnuPG key ID to use for encryption (`gpg --list-keys --keyid-format short user@example.com`)
 
-<pre><code>
+```
 #!/bin/bash
 # 
 # Time-based One-time Password algorithm (TOTP) helper script
@@ -111,9 +111,8 @@ fi
 
 echo "Command $1 unknown"
 $0
+```
 
-</code></pre>
-</p>
 Make it executable with:
 
 `sudo chmod +x /usr/local/bin/topt`
