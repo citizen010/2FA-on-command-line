@@ -120,14 +120,14 @@ Last but not least, make the script executable with:
 
 ## Usage ##
 If you run it without argument, an help will be displayed:<br />
-`totp
-
+`totp`
+```
 Usage:
    totp list
    totp get github
    totp set twitter QUBAYAYXV5KANLHI
    
-`
+```
 
 To list all available kyes use:<br />
 `totp list`
