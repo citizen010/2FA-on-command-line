@@ -120,7 +120,9 @@ Make it executable with:
 
 ## Usage ##
 `totp list` list all available keys
+
 `totp get github` get the TOTP code for accesing GitHub
+
 `totp set twitter 0123456789` set the SECRET KEY for Twitter
 
 ## License ##
