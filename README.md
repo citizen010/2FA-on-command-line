@@ -119,6 +119,16 @@ Last but not least, make the script executable with:
 `sudo chmod +x /usr/local/bin/topt`
 
 ## Usage ##
+If you run it without argument, an help will be displayed:<br />
+`totp
+
+Usage:
+   totp list
+   totp get github
+   totp set twitter QUBAYAYXV5KANLHI
+   
+`
+
 To list all available kyes use:<br />
 `totp list`
 
