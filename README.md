@@ -18,7 +18,7 @@ Make sure to adapt the 3 variables:
 - [x] **USERID:** GnuPG user ID to use for encryption (eg: user@example.com)
 - [x] **KEYID:** GnuPG key ID to use for encryption (`gpg --list-keys --keyid-format short user@example.com`)
 
-```
+```bash
 #!/bin/bash
 # 
 # Time-based One-time Password algorithm (TOTP) helper script
