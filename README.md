@@ -125,7 +125,7 @@ Last but not least, make the script executable with:
 
 `totp set twitter 0123456789` set the SECRET KEY for Twitter
 
-Congratulations!! :+1:
+Congratulations!! :+1:<br />
 Now you're able to get 2FA code on command line.
 
 ## License ##
