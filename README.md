@@ -65,6 +65,7 @@ if [ -z "$1" ]; then
   echo "   totp list"
   echo "   totp get github"
   echo "   totp set twitter QUBAYAYXV5KANLHI"
+  echo
   exit
 fi
 
