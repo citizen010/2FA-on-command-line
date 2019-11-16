@@ -58,7 +58,7 @@ if [ -z "$1" ]; then
   echo "Usage:"
   echo "   totp list"
   echo "   totp get github"
-  echo "   totp set twitter QUBAYAYXV5KANLHI"
+  echo "   totp set twitter 0123456789"
   echo
   exit
 fi
@@ -125,7 +125,7 @@ If you run it without argument, an help will be displayed:<br />
 Usage:
    totp list
    totp get github
-   totp set twitter QUBAYAYXV5KANLHI
+   totp set twitter 0123456789
    
 ```
 
