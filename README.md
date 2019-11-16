@@ -108,7 +108,7 @@ echo "Command $1 unknown"
 $0
 ```
 
-**BEFORE TO CONTINUE** Make sure to adapt the 3 variables below with some content relevant to your setup:
+:zap: **BEFORE TO CONTINUE** :zap: Make sure to adapt the 3 variables below with some content relevant to your setup:
 
 >    * **KEYFILE:** file that holds the name/key pairs (eg: $HOME/.totpkeys)
 >    * **USERID:** GnuPG user ID to use for encryption (eg: user@example.com)
