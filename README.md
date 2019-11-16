@@ -10,7 +10,7 @@ Make sure you're logged in as a regular user (not as root) and install as follow
 
 Then, whith your editor of choice, store the following source code to a shell script:
 
-`/usr/local/bin/totp`
+eg: `/usr/local/bin/totp`
 
 ```bash
 #!/bin/bash
