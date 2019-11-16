@@ -114,7 +114,7 @@ $0
 >    * **USERID:** GnuPG user ID to use for encryption (eg: user@example.com)
 >    * **KEYID:** GnuPG key ID to use for encryption (`gpg --list-keys --keyid-format short user@example.com`)
 
-Make it executable with:
+Last but not least, make the script executable with:
 
 `sudo chmod +x /usr/local/bin/topt`
 
