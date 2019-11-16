@@ -15,7 +15,7 @@ Then, store the following source code to a shell script:
 Make sure to adapt the 3 variables:
 
 - [x] **KEYFILE:** file that holds the name/key pairs (eg: $HOME/.totpkeys)
-- [x] **UID:** GnuPG user ID to use for encryption (eg: user@example.com)
+- [x] **USERID:** GnuPG user ID to use for encryption (eg: user@example.com)
 - [x] **KEYID:** GnuPG key ID to use for encryption (`gpg --list-keys --keyid-format short user@example.com`)
 
 <pre><code>
@@ -31,7 +31,7 @@ Make sure to adapt the 3 variables:
 #
 # Adapt the 3 variables below:
 # - KEYFILE: file that holds the name/key pairs
-# - UID: GnuPG user ID to use for encryption
+# - USERID: GnuPG user ID to use for encryption
 # - KEYID: GnuPG key ID to use for encryption
 #
 # Good to know:
@@ -56,7 +56,7 @@ Make sure to adapt the 3 variables:
 set -e
 
 KEYFILE="$HOME/.totpkeys"
-UID="user@example.com"
+USERID="user@example.com"
 KEYID="9E2A4CEF"
 
 if [ -z "$1" ]; then
@@ -87,7 +87,7 @@ if [ "$1" = 'get' ]; then
     $0
     exit
   fi
-  TOTPKEY=$(echo "$TOTPKEY" | base64 -d | gpg --decrypt -r "$UID" -u "$KEYID" 2> /dev/null)
+  TOTPKEY=$(echo "$TOTPKEY" | base64 -d | gpg --decrypt -r "$USERID" -u "$KEYID" 2> /dev/null)
   oathtool --totp -b "$TOTPKEY"
   exit
 fi
@@ -104,7 +104,7 @@ if [ "$1" = 'set' ]; then
     exit
   fi
   oathtool --totp -b "$3" > /dev/null # verify secret
-  TOTPKEY=$(echo "$3" | gpg --encrypt -r "$UID" -u "$KEYID" | base64 -w0)
+  TOTPKEY=$(echo "$3" | gpg --encrypt -r "$USERID" -u "$KEYID" | base64 -w0)
   echo "$2=$TOTPKEY" >> "$KEYFILE"
   exit
 fi
