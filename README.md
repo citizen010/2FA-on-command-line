@@ -126,7 +126,6 @@ Usage:
    totp list
    totp get github
    totp set twitter 0123456789
-   
 ```
 
 To list all available kyes use:<br />
