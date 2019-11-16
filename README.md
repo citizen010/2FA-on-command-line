@@ -3,7 +3,7 @@
 There is no shortage of [OTP](https://en.wikipedia.org/wiki/One-time_password) 2FA apps availiable for your phone, such as [Authy](https://authy.com), [FreeOTP](https://freeotp.github.io/) or even the not so recommended [Google Authenticator](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&hl=en_us).
 These apps take an initial secret code and create a [TOTP](https://en.wikipedia.org/wiki/Time-based_One-time_Password_algorithm) anytime you  need a 2FA code for login.
 Using `oathtool` in the command line has the advantages that we'll be able to use TOTP authentication on Linux machines without mobile phone and it forces us to backup all our TOTP secrets and not only some recovery keys.
-## Usage ##
+## Install ##
 Make sure you're logged in as a regular user (not as root) and install as follow:
 
 `sudo apt install oathtool gpg`
@@ -63,8 +63,8 @@ if [ -z "$1" ]; then
   echo
   echo "Usage:"
   echo "   totp list"
-  echo "   totp get google"
-  echo "   totp set google QUBAYAYXV5KANLHI"
+  echo "   totp get github"
+  echo "   totp set twitter QUBAYAYXV5KANLHI"
   exit
 fi
 
@@ -117,6 +117,11 @@ $0
 Make it executable with:
 
 `sudo chmod +x /usr/local/bin/topt`
+
+## Usage ##
+`totp list` list all available keys
+`totp get github` get the TOTP code for accesing GitHub
+`totp set twitter 0123456789` set the SECRET KEY for Twitter
 
 ## License ##
 <a href="https://raw.githubusercontent.com/citizen010/empty-site-template/master/LICENSE" rel="nofollow"><img src="https://camo.githubusercontent.com/890acbdcb87868b382af9a4b1fac507b9659d9bf/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6c6963656e73652d4d49542d626c75652e737667" alt="GitHub license" data-canonical-src="https://img.shields.io/badge/license-MIT-blue.svg" style="max-width:100%;"></a>
