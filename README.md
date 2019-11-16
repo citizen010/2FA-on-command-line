@@ -119,7 +119,7 @@ Last but not least, make the script executable with:
 `sudo chmod +x /usr/local/bin/topt`
 
 ## Usage ##
-If you run it without argument, an help will be displayed:<br />
+If you run it without arguments, an help will be displayed:<br />
 `totp`
 ```
 Usage:
