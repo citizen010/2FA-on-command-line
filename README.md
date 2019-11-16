@@ -119,15 +119,13 @@ Last but not least, make the script executable with:
 `sudo chmod +x /usr/local/bin/topt`
 
 ## Usage ##
-To list all available kyes use:
-
+To list all available kyes use:<br />
 `totp list`
 
-To get the TOTP code for accessing GitHub use:
-
+To get the TOTP code for accessing GitHub use:<br />
 `totp get github`
 
-To set the __SECRET KEY__ for Twitter use:
+To set the __SECRET KEY__ for Twitter use:<br />
 `totp set twitter 0123456789`
 
 ## License ##
