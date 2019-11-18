@@ -1,3 +1,5 @@
+![MIT license](https://img.shields.io/badge/license-MIT-blue)
+
 # Time-based One-Time-Password for 2FA on CLI
 ## About
 There is no shortage of [OTP](https://en.wikipedia.org/wiki/One-time_password) 2FA apps availiable for your phone, such as [Authy](https://authy.com), [FreeOTP](https://freeotp.github.io/) or even the not so recommended [Google Authenticator](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&hl=en_us).
