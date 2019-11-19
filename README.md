@@ -136,8 +136,7 @@ github=1357924680
 - the last available key for the chosen service is used
 - to restore the previous key, manually delete the last key from $KEYFILE
 
-If you run it without arguments, an help will be displayed:<br />
-`totp`
+If you run it without arguments, an help will be displayed: `totp`
 ```
 Usage:
    totp list
@@ -145,8 +144,7 @@ Usage:
    totp set twitter 0123456789
 ```
 
-To list all available kyes use:<br />
-`totp list`
+To list all available keys use: `totp list`
 ```
 Available keys:
 aws
@@ -154,8 +152,10 @@ twitter
 github
 ```
 
-To get the TOTP code for accessing GitHub use:<br />
+To get the TOTP code for accessing GitHub use:
+
 `totp get github`
 
-To set the __SECRET KEY__ for Twitter use:<br />
+To set the __SECRET KEY__ for Twitter use:
+
 `totp set twitter 0123456789`
