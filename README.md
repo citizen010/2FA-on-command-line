@@ -128,9 +128,9 @@ With your editor of choice, create the __KEYFILE__ as :
 `nano $HOME/.totpkeys`
 
 ```
-aws=<SECRET_AWS>
-tritter=<SECRET_TWITTER>
-github=<SECRET-GITHUB>
+aws=0123456789>
+tritter=9876543210
+github=1357924680
 ```
 - the shared secrets are stored encrypted with gpg then base64-ed
 - keys are never deleted, only appended
