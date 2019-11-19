@@ -128,7 +128,7 @@ With your editor of choice, create the __KEYFILE__ as :
 `nano $HOME/.totpkeys`
 
 ```
-aws=0123456789>
+aws=0123456789
 tritter=9876543210
 github=1357924680
 ```
