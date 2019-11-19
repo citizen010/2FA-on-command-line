@@ -124,7 +124,7 @@ Last but not least, make the script executable with:
 
 ## Usage ##
 
-With your referrd editor, create the __KEYFILE__ as :
+With your editor of choice, create the __KEYFILE__ as :
 `nano $HOME/.totpkeys`
 
 ```
