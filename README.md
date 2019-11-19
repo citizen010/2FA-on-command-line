@@ -1,3 +1,5 @@
+![TOTP 2FA](https://github.com/citizen010/shadowsocks/blob/master/img/totp2fa.jpg)
+
 ![MIT license](https://img.shields.io/badge/license-MIT-blue)
 
 # Time-based One-Time-Password for 2FA on CLI
