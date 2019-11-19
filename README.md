@@ -24,7 +24,7 @@ eg: `/usr/local/bin/totp`
 # Easily generate OTPs for two-factor authorization (2FA)
 #
 # Setup:
-# Install requirements with `sudo apt install oathtool gpg`
+# Install requirements with: sudo apt install oathtool gpg
 # Setup gpg as per https://keyring.debian.org/creating-key.html
 #
 # Adapt the 3 variables below:
@@ -33,7 +33,7 @@ eg: `/usr/local/bin/totp`
 # - KEYID: GnuPG key ID to use for encryption
 #
 # Good to know:
-# - get gpg keys with: `gpg --list-keys --keyid-format short user@example.com'
+# - get gpg keys with: gpg --list-keys --keyid-format short user@example.com
 #
 # - the $KEYFILE itself is in clear and has the format:
 #     aws=hQIMAxevVAas6A+AAQ//cJL/v3O6CCurdzVkCk5yEGa6sZgWWw6AkH/QenVmTSj...
@@ -123,6 +123,20 @@ Last but not least, make the script executable with:
 `sudo chmod +x /usr/local/bin/topt`
 
 ## Usage ##
+
+With your referrd editor, create the __KEYFILE__ as :
+`nano $HOME/.totpkeys`
+
+```
+aws=<SECRET_AWS>
+tritter=<SECRET_TWITTER>
+github=<SECRET-GITHUB>
+```
+- the shared secrets are stored encrypted with gpg then base64-ed
+- keys are never deleted, only appended
+- the last available key for the chosen service is used
+- to restore the previous key, manually delete the last key from $KEYFILE
+
 If you run it without arguments, an help will be displayed:<br />
 `totp`
 ```
