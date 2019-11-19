@@ -1,4 +1,4 @@
-![TOTP 2FA](https://github.com/citizen010/2FA-on-command-line/blob/master/img/2fa.jpg)
+![TOTP 2FA](https://github.com/citizen010/2FA-on-command-line/blob/master/img/2fa1.jpg)
 
 ![MIT license](https://img.shields.io/badge/license-MIT-blue)
 
