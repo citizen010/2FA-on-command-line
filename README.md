@@ -1,4 +1,4 @@
-![TOTP 2FA](https://github.com/citizen010/shadowsocks/blob/master/img/totp2fa.jpg)
+![TOTP 2FA](https://github.com/citizen010/shadowsocks/blob/master/img/totp2fa.jpeg)
 
 ![MIT license](https://img.shields.io/badge/license-MIT-blue)
 
