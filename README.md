@@ -124,7 +124,7 @@ Make the script executable with:
 
 ## Usage ##
 
-With your editor of choice, create the __KEYFILE__ as : `nano $HOME/.totpkeys`
+With your editor of choice, create the __SKEYFILE__ as : `nano $HOME/.totpkeys`
 
 ```
 aws=0123456789
@@ -134,7 +134,7 @@ github=1357924680
 - the shared secrets are stored encrypted with gpg then base64-ed
 - keys are never deleted, only appended
 - the last available key for the chosen service is used
-- to restore the previous key, manually delete the last key from $KEYFILE
+- to restore the previous key, manually delete the last key from __$KEYFILE__
 
 If you run it without arguments, an help will be displayed: `totp`
 ```
