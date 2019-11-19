@@ -124,7 +124,7 @@ Make the script executable with:
 
 ## Usage ##
 
-With your editor of choice, create the __SKEYFILE__ as : `nano $HOME/.totpkeys`
+With your editor of choice, create the __$KEYFILE__ as : `nano $HOME/.totpkeys`
 
 ```
 aws=0123456789
