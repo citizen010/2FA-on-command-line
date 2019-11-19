@@ -147,6 +147,12 @@ Usage:
 
 To list all available kyes use:<br />
 `totp list`
+```
+Available keys:
+aws
+twitter
+github
+```
 
 To get the TOTP code for accessing GitHub use:<br />
 `totp get github`
